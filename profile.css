@@ -18,3 +18,9 @@ span{
 .newtitle{
     color: red;
 }
+
+.jumbotron{
+    height: 300px;
+    color: white;
+    background-image: url('https://www.dictionary.com/e/wp-content/uploads/2017/02/20200413_emphasisItalics_1000x700.jpg');
+}
