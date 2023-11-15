@@ -16,19 +16,12 @@
     background-color: gray;
     margin-top: 50px;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.container div:nth-child(even){
+.container div{
     border: 1px solid black;
     height: 200px;
-    width: 300px;
-}
-
-.container div:nth-child(odd){
-    border: 1px solid black;
-    height: 200px;
-    width: 300px;
+    width: 50%;
 }
