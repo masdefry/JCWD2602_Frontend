@@ -60,11 +60,15 @@ body{
     .jumbotron h1{
         display: none;
         position: absolute;
-        bottom: 300px;
-        left: 300px;
+        bottom: 10px;
+        left: 10px;
         color: white;
         font-size: 60px;
         max-width: 100px;
+    }
+
+    .hidden{
+        display: block;
     }
 }
 
@@ -78,10 +82,14 @@ body{
     .jumbotron h1{
         display: block;
         position: absolute;
-        bottom: 300px;
-        left: 300px;
+        bottom: 10px;
+        left: 10px;
         color: white;
         font-size: 60px;
-        max-width: 100px;
+        max-width: 500px;
+    }
+
+    .hidden{
+        display: none;
     }
 }
