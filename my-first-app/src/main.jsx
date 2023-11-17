@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import './index.css';
+import './Supports/Stylesheets/Utils.css'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,15 +11,27 @@ import {
 // Pages
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
+import Props from './Pages/Props/Index.jsx';
+
+import App from './App.jsx'
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/profile", 
-    element: <Profile />
+  { 
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/profile", 
+        element: <Profile />
+      },
+      {
+        path: "/props", 
+        element: <Props />
+      }
+    ]
   }
 ]);
 

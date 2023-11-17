@@ -1,19 +1,13 @@
-// import './App.css'
-import Home from './Pages/Home';
+import Navbar from './Components/Navbar.jsx';
 
-const number = 10
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
   return (
     <>
-      <h1>
-        App.jsx
-      </h1>
-      <h1>
-        {number}
-      </h1>
-      <Home />
+      <Navbar />
+      <Outlet />
     </>
   )
 }
