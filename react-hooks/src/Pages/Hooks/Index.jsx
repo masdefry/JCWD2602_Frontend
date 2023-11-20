@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react"
-
-let dataDummy = []
+import { useEffect, useState, useRef } from "react"
 
 export default function Hooks(){
+
+    const inputUsername = useRef()
+    const inputPassword = useRef()
 
     const[number, setNumber] = useState(0)
 
@@ -36,6 +37,15 @@ export default function Hooks(){
         }
     }
 
+    const onRegister = async() => {
+        try {
+            console.log(inputUsername.current.value)
+            console.log(inputPassword.current.value)
+        } catch (error) {
+            
+        }
+    }
+
     return(
         <div className="flex justify-center flex-col items-center">
             <h1>
@@ -50,6 +60,12 @@ export default function Hooks(){
             </ul>
             <button className="btn bg-blue-300" onClick={onGetData}>
                 Fetch Data
+            </button>
+
+            <input type="text" ref={inputUsername} className="input border" placeholder="Enter Username" />
+            <input type="password" ref={inputPassword} className="input border" placeholder="Enter Username" />
+            <button className="btn bg-blue-300" onClick={onRegister}>
+                Register
             </button>
         </div>
     )   
