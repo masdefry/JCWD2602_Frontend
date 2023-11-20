@@ -14,6 +14,11 @@ export default function Navbar(){
                     Profile
                 </Link>
             </span>
+            <span>
+                <Link to='/hooks'>
+                    Hooks
+                </Link>
+            </span>
         </nav>
     )
 }

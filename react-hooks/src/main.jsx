@@ -11,6 +11,7 @@ import {
 import App from './App.jsx'
 import Home from './Pages/Home';
 import Profile from './Pages/Profile/Index';
+import Hooks from './Pages/Hooks/Index.jsx'
 
 const router = createBrowserRouter([
   { 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />
+      },
+      {
+        path: "/hooks",
+        element: <Hooks />
       }
     ]
   }
