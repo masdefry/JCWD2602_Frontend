@@ -1,17 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css';
-import './Supports/Stylesheets/Utils.css'
+import './index.css'
 
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from "react-router-dom"
 
 // Pages
 import Home from './Pages/Home';
-import Profile from './Pages/Profile';
-import Props from './Pages/Props/Index.jsx';
 
 import App from './App.jsx'
 
@@ -22,14 +19,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
-      },
-      {
-        path: "/profile", 
-        element: <Profile />
-      },
-      {
-        path: "/props", 
-        element: <Props />
       }
     ]
   }
