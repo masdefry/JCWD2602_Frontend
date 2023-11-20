@@ -1,4 +1,5 @@
-import { CiShoppingCart } from "react-icons/ci";
+import { CiShoppingCart, CiUser } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 export default function Navbar(){
     return(
@@ -11,7 +12,9 @@ export default function Navbar(){
             <div className="bg-red-700 text-white px-3 flex justify-between items-center">
                 <div className="flex items-center gap-24">
                     <div>
-                        <img src="https://preppstudio.com/assets/prepp-studio-5609aeb0.png" width="130px" height="130px" />
+                        <Link to='/'>
+                            <img src="https://preppstudio.com/assets/prepp-studio-5609aeb0.png" width="130px" height="130px" />
+                        </Link>
                     </div>
                     <div>
                         HOT ITEMS 
@@ -20,10 +23,15 @@ export default function Navbar(){
                         MONOLITE SHIRT
                     </div>
                 </div>
-                <div>
+                <div className="flex items-center">
+                    <div>
+                        <Link to='/register'>
+                            <CiUser className="text-white text-3xl" />
+                        </Link>
+                    </div>
                     <div className="relative">
-                        <CiShoppingCart className="text-white text-5xl" />
-                        <span className="absolute top-[-5px] right-0 bg-white text-black rounded-full px-2 py-1 text-xs">
+                        <CiShoppingCart className="text-white text-3xl" />
+                        <span className="absolute top-[-10px] right-[-10px] bg-white text-black rounded-full px-2 py-1 text-xs">
                             1
                         </span>
                     </div>

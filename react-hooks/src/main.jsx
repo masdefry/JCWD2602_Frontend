@@ -10,7 +10,7 @@ import {
 // Pages
 import App from './App.jsx'
 import Home from './Pages/Home';
-import Register from './Pages/Register/Index.jsx';
+import Profile from './Pages/Profile/Index';
 
 const router = createBrowserRouter([
   { 
@@ -21,15 +21,15 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/register", 
-        element: <Register />
+        path: "/profile",
+        element: <Profile />
       }
     ]
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  
     <RouterProvider router={router} />
-  </React.StrictMode>,
+
 )
