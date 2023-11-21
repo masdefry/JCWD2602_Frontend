@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import RegisterForm from "../../Components/RegisterForm";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 import toast, {Toaster} from 'react-hot-toast';
 
@@ -8,6 +9,7 @@ export default function Login(){
 
     const inputUsername = useRef()
     const inputPassword = useRef()
+    const navigate = useNavigate();
 
     const onLogin = async() => {
         try {
@@ -20,6 +22,9 @@ export default function Login(){
             if(response.data.length === 0) throw {message: 'Login Failed!'}
 
             toast.success('Login Success!')
+            setTimeout(() => {
+                navigate('/')
+            }, 3000)
         } catch (error) {
             toast.error(error.message)
         }
