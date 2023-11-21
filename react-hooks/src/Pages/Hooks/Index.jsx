@@ -46,20 +46,27 @@ export default function Hooks(){
         }
     }
 
+    const onDecrement = () => {
+        if(number > 0) setNumber(number-1)
+    }
+
     return(
         <div className="flex justify-center flex-col items-center">
             <h1>
                 Hooks Page
             </h1>
-            <button className="btn bg-blue-300" onClick={() => setNumber(number-1)}>
-                -
-            </button>
-            <h1>
-                {number}
-            </h1>
-            <button className="btn bg-blue-300" onClick={() => setNumber(number+1)}>
-                +
-            </button>
+
+            <div className="flex items-center gap-3">
+                <button className="btn bg-blue-300" onClick={onDecrement}>
+                    -
+                </button>
+                <h1>
+                    {number}
+                </h1>
+                <button className="btn bg-blue-300" onClick={() => setNumber(number+1)}>
+                    +
+                </button>
+            </div>
 
             <input type="text" ref={inputUsername} className="input border" placeholder="Enter Username" />
             <input type="password" ref={inputPassword} className="input border" placeholder="Enter Username" />
