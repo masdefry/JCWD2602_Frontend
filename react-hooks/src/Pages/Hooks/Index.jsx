@@ -6,7 +6,7 @@ export default function Hooks(){
     const inputPassword = useRef()
 
     const[number, setNumber] = useState(0)
-
+    
     // Kiri untuk pakai data, kanan untuk menyimpan data
     const[data, setData] = useState([])
 
@@ -51,15 +51,14 @@ export default function Hooks(){
             <h1>
                 Hooks Page
             </h1>
-            <ul>
-                {data.map((item, index) => {
-                    return(
-                        <li>{item.username}</li>
-                    )
-                })}
-            </ul>
-            <button className="btn bg-blue-300" onClick={onGetData}>
-                Fetch Data
+            <button className="btn bg-blue-300" onClick={() => setNumber(number-1)}>
+                -
+            </button>
+            <h1>
+                {number}
+            </h1>
+            <button className="btn bg-blue-300" onClick={() => setNumber(number+1)}>
+                +
             </button>
 
             <input type="text" ref={inputUsername} className="input border" placeholder="Enter Username" />
