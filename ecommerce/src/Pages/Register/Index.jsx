@@ -2,6 +2,10 @@ import RegisterForm from "../../Components/RegisterForm"
 
 import {useRef} from 'react';
 
+import toast, { Toaster } from 'react-hot-toast';
+
+import axios from 'axios';
+
 export default function Register(){
 
     const inputUsername = useRef()
@@ -9,20 +13,31 @@ export default function Register(){
     const inputPassword = useRef()
     const inputConfirmPassword = useRef()
 
-    const onRegister = () => {
-        if(inputUsername.current.value.length < 5) alert('Minimum Character 5')
-        if(!inputEmail.current.value.includes('@')) alert('Email Not Valid')
+    const onRegister = async() => {
+        try {
+            // Step-1. Validation Input
+            if(inputUsername.current.value.length < 5) throw({message: 'Minimum 5 Character'})
+            if(!inputEmail.current.value.includes('@')) throw({message: 'Email Not Valid'})
+            if(inputPassword.current.value !== inputConfirmPassword.current.value) throw({message: 'Password Doesnt Match'})
+
+            // Step-2. Send Post Request
+            await axios.post(`http://localhost:5000/users`, {username: inputUsername.current.value, email: inputEmail.current.value, password: inputPassword.current.value})
+            toast.success('Register Success!')
+        } catch (error) { // error: {message: ...}
+            toast.error(error.message)
+        }
     }
 
     return(
-        <>
+        <>  
+            <Toaster />
             <div className="flex justify-center py-5 text-3xl font-bold">
                 <h1>
                     Register Your Account
                 </h1>
             </div>
             <div className="flex justify-center">
-                <div onClick={onRegister} className="w-[500px]">
+                <div className="w-[500px]">
                     <RegisterForm inputRef={inputUsername} type="text" label="Username" />
                     <RegisterForm inputRef={inputEmail} type="text" label="Email" />
                     <RegisterForm inputRef={inputPassword} type="password" label="Password" />
