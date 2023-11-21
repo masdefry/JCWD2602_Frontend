@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import axios from 'axios';
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Register(){
 
@@ -52,6 +53,9 @@ export default function Register(){
                     <button disabled={isLoading} onClick={onRegister} className="btn bg-red-700 text-white w-full mt-5">
                         {isLoading? 'Loading...':'Submit'}
                     </button>
+                    <div className="flex justify-center">
+                        Already Have Account? <Link to='/login'>Login Here</Link>
+                    </div>
                 </div>
             </div>
         </>
