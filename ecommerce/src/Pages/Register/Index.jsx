@@ -5,6 +5,7 @@ import {useRef} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 import axios from 'axios';
+import { useState } from "react";
 
 export default function Register(){
 
@@ -13,6 +14,8 @@ export default function Register(){
     const inputPassword = useRef()
     const inputConfirmPassword = useRef()
 
+    const[isLoading, setIsLoading] = useState(false)
+
     const onRegister = async() => {
         try {
             // Step-1. Validation Input
@@ -20,11 +23,15 @@ export default function Register(){
             if(!inputEmail.current.value.includes('@')) throw({message: 'Email Not Valid'})
             if(inputPassword.current.value !== inputConfirmPassword.current.value) throw({message: 'Password Doesnt Match'})
 
+            setIsLoading(true)
+
             // Step-2. Send Post Request
             await axios.post(`http://localhost:5000/users`, {username: inputUsername.current.value, email: inputEmail.current.value, password: inputPassword.current.value})
             toast.success('Register Success!')
         } catch (error) { // error: {message: ...}
             toast.error(error.message)
+        }finally{
+            setIsLoading(false)
         }
     }
 
@@ -42,8 +49,8 @@ export default function Register(){
                     <RegisterForm inputRef={inputEmail} type="text" label="Email" />
                     <RegisterForm inputRef={inputPassword} type="password" label="Password" />
                     <RegisterForm inputRef={inputConfirmPassword} type="password" label="Confirm Password" />
-                    <button onClick={onRegister} className="btn bg-red-700 text-white w-full mt-5">
-                        Submit
+                    <button disabled={isLoading} onClick={onRegister} className="btn bg-red-700 text-white w-full mt-5">
+                        {isLoading? 'Loading...':'Submit'}
                     </button>
                 </div>
             </div>
