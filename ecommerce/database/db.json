@@ -65,6 +65,12 @@
       "email": "ryan123@gmail.com",
       "password": "abc",
       "id": 11
+    },
+    {
+      "username": "masdefry",
+      "email": "masde@gmail.com",
+      "password": "123123123",
+      "id": 12
     }
   ]
 }

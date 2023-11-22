@@ -1,15 +1,19 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import RegisterForm from "../../Components/RegisterForm";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 import toast, {Toaster} from 'react-hot-toast';
 
+import { userDataContext } from "../../Data/userDataContext";
+
 export default function Login(){
 
     const inputUsername = useRef()
     const inputPassword = useRef()
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+
+    const {setUser} = useContext(userDataContext)
 
     const onLogin = async() => {
         try {
@@ -21,6 +25,7 @@ export default function Login(){
             const response = await axios.get(`http://localhost:5000/users?username=${username}&password=${password}`)
             if(response.data.length === 0) throw {message: 'Login Failed!'}
 
+            setUser(response.data[0].username)
             toast.success('Login Success!')
             setTimeout(() => {
                 navigate('/')

@@ -2,13 +2,16 @@ import Navbar from './Components/Navbar.jsx';
 
 import { Outlet } from 'react-router-dom';
 
-function App() {
+import {userDataContext} from './Data/userDataContext.js'
+import { useState } from 'react';
 
+function App() {
+  const[user, setUser] = useState(null)
   return (
-    <>
+    <userDataContext.Provider value={{user, setUser}}>
       <Navbar />
       <Outlet />
-    </>
+    </userDataContext.Provider>
   )
 }
 

@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { CiShoppingCart, CiUser } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { userDataContext } from "../Data/userDataContext";
 
 export default function Navbar(){
+
+    const {user} = useContext(userDataContext)
+
     return(
         <nav>
             <div className="height-[30px] pl-3">
@@ -30,6 +35,7 @@ export default function Navbar(){
                         </Link>
                     </div>
                     <div className="relative">
+                        {user}
                         <CiShoppingCart className="text-white text-3xl" />
                         <span className="absolute top-[-10px] right-[-10px] bg-white text-black rounded-full px-2 py-1 text-xs">
                             1

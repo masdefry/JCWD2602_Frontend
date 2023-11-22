@@ -4,9 +4,10 @@ import {useRef} from 'react';
 
 import toast, { Toaster } from 'react-hot-toast';
 
-import axios from 'axios';
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+import {axiosInstance} from './../../Lib/AxiosInstance'
 
 export default function Register(){
 
@@ -27,12 +28,12 @@ export default function Register(){
             setIsLoading(true)
 
             // Check Username or Email Exist or Not?
-            const response = await axios.get(`http://localhost:5000/users?email=${inputEmail.current.value}`)
+            const response = await axiosInstance.get(`/users?email=${inputEmail.current.value}`)
             
             if(response.data.length > 0) throw ({message: 'Email Already Exist!'})
 
             // Step-2. Send Post Request
-            await axios.post(`http://localhost:5000/users`, {username: inputUsername.current.value, email: inputEmail.current.value, password: inputPassword.current.value})
+            await axiosInstance.post(`/users`, {username: inputUsername.current.value, email: inputEmail.current.value, password: inputPassword.current.value})
             toast.success('Register Success!')
 
             inputUsername.current.value = ''
