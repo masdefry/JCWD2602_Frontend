@@ -26,9 +26,19 @@ export default function Register(){
 
             setIsLoading(true)
 
+            // Check Username or Email Exist or Not?
+            const response = await axios.get(`http://localhost:5000/users?email=${inputEmail.current.value}`)
+            
+            if(response.data.length > 0) throw ({message: 'Email Already Exist!'})
+
             // Step-2. Send Post Request
             await axios.post(`http://localhost:5000/users`, {username: inputUsername.current.value, email: inputEmail.current.value, password: inputPassword.current.value})
             toast.success('Register Success!')
+
+            inputUsername.current.value = ''
+            inputEmail.current.value = ''
+            inputPassword.current.value = ''
+            inputConfirmPassword.current.value = ''
         } catch (error) { // error: {message: ...}
             toast.error(error.message)
         }finally{
