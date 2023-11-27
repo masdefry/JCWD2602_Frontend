@@ -2,7 +2,7 @@
     "products": [
         {
             "id": 1, 
-            "name": "Apel", 
+            "name": "Apel01", 
             "price": 10000, 
             "unit": "Kg",
             "image": "https://radarpekalongan.disway.id/upload/09bed40c17475b8f9c989743a26f3cf8.jpg"
