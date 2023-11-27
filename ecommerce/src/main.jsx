@@ -5,13 +5,14 @@ import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom"
+} from "react-router-dom";
 
 // Pages
 import App from './App.jsx'
 import Home from './Pages/Home';
 import Register from './Pages/Register/Index.jsx';
 import Login from './Pages/Login/Index.jsx'
+import DetailProduct from './Pages/DetailProduct/Index.jsx'
 
 const router = createBrowserRouter([
   { 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/login", 
         element: <Login />
+      },
+      {
+        path: "/detail-product/:slug",
+        element: <DetailProduct />
       }
     ]
   }

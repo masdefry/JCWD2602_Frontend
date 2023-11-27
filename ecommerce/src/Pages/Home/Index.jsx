@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../Components/Card"
 import { axiosInstance } from './../../Lib/AxiosInstance';
+import { Link } from "react-router-dom";
 
 export default function Home(){
     const[products, setProducts] = useState([])
@@ -30,13 +31,18 @@ export default function Home(){
             <section id="products-lists" className="px-4 py-4">
                 <div className="grid grid-cols-4 gap-2">
                     {
-                        products.map((item, index) => {
-                            return(
-                                <>  
-                                    <Card data={item} />
-                                </>
-                            )
-                        })
+                        !products.length?
+                            'Loading...'
+                        :
+                            products.map((item, index) => {
+                                return(
+                                    <>  
+                                        
+                                        <Card data={item} />
+                                  
+                                    </>
+                                )
+                            })
                     }
                 </div>
             </section>

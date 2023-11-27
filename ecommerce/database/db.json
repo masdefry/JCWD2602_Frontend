@@ -117,7 +117,7 @@
       "color": "Black",
       "material": "Leather",
       "price": 32298000,
-      "image_url": "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/7/15/6e72e1e0-73b4-4409-8c1e-e7c4d56d0340.jpg"
+      "image": "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/7/15/6e72e1e0-73b4-4409-8c1e-e7c4d56d0340.jpg"
     },
     {
       "id": 7,
@@ -126,7 +126,7 @@
       "color": "Monogram",
       "material": "Canvas",
       "price": 31500000,
-      "image_url": "https://id.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-speedy-bandouli%C3%A8re-30-monogram-tas-tangan--M41112_PM1_Worn%20view.png?wid=1090&hei=1090"
+      "image": "https://id.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-speedy-bandouli%C3%A8re-30-monogram-tas-tangan--M41112_PM1_Worn%20view.png?wid=1090&hei=1090"
     },
     {
       "id": 8,
@@ -135,7 +135,7 @@
       "color": "Navy Blue",
       "material": "Saffiano Leather",
       "price": 58500000,
-      "image_url": "https://cdn-images.farfetch-contents.com/19/89/55/60/19895560_44582898_1000.jpg"
+      "image": "https://cdn-images.farfetch-contents.com/19/89/55/60/19895560_44582898_1000.jpg"
     },
     {
       "id": 9,
@@ -144,7 +144,7 @@
       "color": "Beige",
       "material": "Lambskin",
       "price": 97000000,
-      "image_url": "https://images.stockx.com/images/Chanel-Classic-Double-Flap-Quilted-Medium-Black-Lambskin-Silvertone-Studio-1.jpg?fit=fill&b"
+      "image": "https://images.stockx.com/images/Chanel-Classic-Double-Flap-Quilted-Medium-Black-Lambskin-Silvertone-Studio-1.jpg?fit=fill&b"
 
     }
   ]

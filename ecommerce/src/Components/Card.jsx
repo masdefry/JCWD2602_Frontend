@@ -1,9 +1,14 @@
+import CardModal from "./CardModal"
+import { Link } from 'react-router-dom';
+
 export default function Card(props){
     return(
         <div className="card bg-base-100 shadow-xl">
             <figure className="relative">
-                <img src={props.data.image} />
-                <button className="btn bg-neutral bg-opacity-50 text-white outline-white absolute bottom-10 right-10">Quick View</button>
+                <Link to={`/detail-product/${props.data.id}`}>
+                    <img src={props.data.image} />
+                </Link>
+                <CardModal />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{props.data.name}</h2>
