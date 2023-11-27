@@ -1,8 +1,6 @@
 // *** PARALEL DATA FETCHING
 // const baseUrl = 'https://jsonplaceholder.typicode.com'
 
-import { Suspense } from "react"
-
 // const getDataPosts = async() => {
 //     try {
 //         const response = await fetch(`${baseUrl}/posts`)
@@ -49,6 +47,7 @@ import { Suspense } from "react"
 
 
 // *** SEQUENTIAL DATA FETCHING
+import { Suspense } from "react"
 const baseUrl = 'https://jsonplaceholder.typicode.com'
 
 const getDataPosts = async() => {
