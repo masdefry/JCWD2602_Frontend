@@ -7,7 +7,7 @@ const db = [
 
 export default function Navbar(){
     return(
-        <nav>
+        <div>
             
             <Link href='/'>
                 <span>
@@ -30,6 +30,6 @@ export default function Navbar(){
                     )
                 })
             }
-        </nav>
+        </div>
     )
 }
