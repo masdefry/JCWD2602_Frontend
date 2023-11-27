@@ -18,3 +18,6 @@ Hello, Frontend Developer!
 - How to Install Tailwind with Vite?
     https://tailwindcss.com/docs/guides/vite
     https://flowbite.com/docs/getting-started/quickstart/
+
+- How to Install NextJS?
+    - npm i create-next-app@latest
