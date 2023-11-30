@@ -4,27 +4,43 @@ import { useMutation } from "@tanstack/react-query";
 import InputComponent from "./inputcomponent";
 import {useRef} from 'react';
 
+// 1.1. Import Redux
+import { setUser } from "@/redux/slice/userSlice";
+import { useDispatch } from "react-redux";
+
 export default function Page(){
 
     const inputUsername = useRef()
     const inputPassword = useRef()
 
+    // 1.2. Define useDispatch
+    const dispatch = useDispatch()
+
     const {mutate} = useMutation({
         mutationFn: async() => {
-            // res bentuk datanya masih JSON
-            const res = await fetch(`http://localhost:5000/users?username=${inputUsername.current.value}&password=${inputPassword.current.value}`, {method: 'GET'})
-            // Konversi JSON to object JS
-            return await res.json()
+            try {
+                // res bentuk datanya masih JSON
+                const res = await fetch(`http://localhost:5000/usersss?username=${inputUsername.current.value}&password=${inputPassword.current.value}`, {method: 'GET'})
+
+                if(!res.ok) throw new Error('Server Error')
+                // Konversi JSON to object JS
+                return await res.json()
+            } catch (error) {
+                throw new Error(error)
+            }
         },
 
         onSuccess: (data) => {
             if(data.length === 0) return alert('Login Failed')
 
             alert('Login Success!')
+            // 1.3. Dispatch Data User
+            //      Dipatch Mengirimkan Data Menuju ke Param Action.Payload
+            dispatch(setUser(data))
         }, 
 
-        onError: () => {
-            console.log('Bebasss')
+        onError: (error) => {
+            alert(error)
         }
     })
 
