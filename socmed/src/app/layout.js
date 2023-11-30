@@ -6,6 +6,9 @@ import Navbar from '@/components/navbar'
 // Tanstack React Query Provider
 import {TanstackProvider} from './../providers/tanstackprovider';
 
+// Redux Provider
+import ReduxProvider from '@/providers/reduxprovider';
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,10 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <TanstackProvider>
-        <Navbar />
-        {children}
-      </TanstackProvider>
+      <ReduxProvider>
+        <TanstackProvider>
+          <Navbar />
+          {children}
+        </TanstackProvider>
+      </ReduxProvider>
       </body>
     </html>
   )
