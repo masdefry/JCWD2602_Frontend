@@ -40,7 +40,7 @@ export default function Page(){
             alert('Login Success!')
             // 1.3. Dispatch Data User
             //      Dipatch Mengirimkan Data Menuju ke Param Action.Payload
-            dispatch(setUser(data))
+            dispatch(setUser(data[0])) // {id:, username:, password}
             setCookies(data)
             route.push('/')
         }, 

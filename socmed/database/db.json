@@ -11,5 +11,19 @@
       "password": "abc123",
       "id": 2
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "location": "GOP-9",
+      "image": "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+      "caption": "Lorem",
+      "createdAt": "2023-12-01",
+      "likes": [
+        1,
+        2
+      ]
+    }
   ]
 }
