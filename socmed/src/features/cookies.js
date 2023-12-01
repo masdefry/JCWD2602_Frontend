@@ -8,7 +8,10 @@ export async function setCookies(data){
 
 export async function getCookies(){
     const cookieStore = cookies()
-    return cookieStore.get('userData')
+    const value = cookieStore.get('userData')
+    
+    if(value) return value 
+    return {value: null}
 }
 
 export async function removeCookies(){

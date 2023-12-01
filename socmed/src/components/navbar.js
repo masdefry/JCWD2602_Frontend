@@ -17,14 +17,17 @@ export default function Navbar(){
 
     const dispatch = useDispatch()
 
+    // Function CheckIsLogin
     useQuery({
         queryFn: async() => {
             const {value} = await getCookies() // Get Id
             
-            let res = await fetch(`http://localhost:5000/users/${value}`) // Id to Get Data
-            res = await res.json() // {id:, username:, dsb...}
-            
-            dispatch(setUser(res))
+           if(value !== null){
+                let res = await fetch(`http://localhost:5000/users/${value}`) // Id to Get Data
+                res = await res.json() // {id:, username:, dsb...}
+                
+                dispatch(setUser(res))
+           }
         }
     })
 

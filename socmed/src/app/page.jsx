@@ -1,11 +1,15 @@
-import { AiTwotoneLike } from "react-icons/ai";
+import { IoIosHeartEmpty } from "react-icons/io";
 import { BiCommentDots } from "react-icons/bi";
 import { VscLocation } from "react-icons/vsc";
 import { CgMenuRound } from "react-icons/cg";
+import {getCookies} from "./../features/cookies"
+import LikePost from './../components/likePost';
 
 const onFetchData = async() => {
   try {
-    let res = await fetch('http://localhost:5000/posts')
+    let res = await fetch('http://localhost:5000/posts?_expand=user', {
+      cache: 'no-store'
+    })
     res = res.json()
     return res 
   } catch (error) {
@@ -16,6 +20,7 @@ const onFetchData = async() => {
 export default async function Home() {
 
   const data = await onFetchData()
+  const {value} = await getCookies('userData')
  
   return (
     <main className='px-32 py-10'>
@@ -45,26 +50,31 @@ export default async function Home() {
                     <div className="card-body">
                       <div className="flex justify-between">
                         <div>
-                          <h2 className="card-title">@purwadhikadigitalschool</h2>  
-                          <h5 className='flex items-center'><VscLocation /> GOP-09 BSD City</h5>
+                          <h2 className="card-title">@{item?.user?.username}</h2>  
+                          <h5 className='flex items-center'><VscLocation /> {item.location}</h5>
                         </div>
                         <div>
                           <CgMenuRound className='text-2xl' />
                         </div>
                       </div>
                     </div>
-                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <figure><img src={`${item.image}`} alt="Shoes" /></figure>
                     <div className="card-body">
                       <div className='flex items-center justify-between'>
-                        <h2 className="card-title">@purwadhikadigitalschool</h2>  
+                        <h2 className="card-title">@{item?.user?.username}</h2>  
                         <div className='flex'>
-                          <AiTwotoneLike className='text-3xl' />
+                          {
+                            item?.likes?.includes(Number(value))?
+                            <LikePost id={item.id} />
+                            :
+                            <IoIosHeartEmpty className='text-3xl' />
+                          }
                           <BiCommentDots className='text-3xl' />
                         </div>
                       </div>
-                      <p>Barang lucu. Hehehe</p>
+                      <p>{item.caption}</p>
                       <p className='mt-5 text-xs'>
-                        Sat, 17 Aug 1945
+                        {item.createdAt}
                       </p>
                     </div>
                   </div>
