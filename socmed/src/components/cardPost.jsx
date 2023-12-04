@@ -1,6 +1,5 @@
 'use server'
 
-import { IoIosHeartEmpty } from "react-icons/io";
 import { BiCommentDots } from "react-icons/bi";
 import { VscLocation } from "react-icons/vsc";
 import { CgMenuRound } from "react-icons/cg";
@@ -26,12 +25,7 @@ export default async function CardPost({item, value}){
                 <div className='flex items-center justify-between'>
                 <h2 className="card-title">@{item?.user?.username}</h2>  
                 <div className='flex'>
-                    {
-                    item?.likes?.includes(Number(value))?
                     <LikePost id={item.id} likes={item.likes} value={value} />
-                    :
-                    <IoIosHeartEmpty className='text-3xl' />
-                    }
                     <BiCommentDots className='text-3xl' />
                 </div>
                 </div>

@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "Eat"
+    },
+    {
+      "todo": "Drink",
+      "id": 2
+    },
+    {
+      "todo": "Futsal",
+      "id": 3
+    },
+    {
+      "todo": "Pulang",
+      "id": 4
+    },
+    {
+      "todo": "Pulang",
+      "id": 5
+    }
+  ]
+}
