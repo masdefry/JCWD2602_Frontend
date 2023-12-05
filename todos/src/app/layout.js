@@ -11,11 +11,14 @@ export const metadata = {
 // 2.5. Pasang Tanstack Provider
 import { TanstackProvider } from '@/providers/tanstackProvider'
 
+import Navbar from '@/components/navbar';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <TanstackProvider>
+        <Navbar />
         {children}
         </TanstackProvider>
       </body>
