@@ -135,7 +135,7 @@ Apa yang harus dilengkapi pada code diatas?
 a. Anda harus menginisialisasi data dan loading dengan data palsu sejak awal, dan kemudian mengubahnya saat data sebenarnya tiba.
 b. Anda harus menambahkan dan membuat state baru di dalam useEffect untuk mengelola data dan loading, karena Anda tidak dapat menggunakan useState di luar return. Setelah itu lakukan permintaan HTTP langsung di dalam useEffect
 c. Anda dapat langsung menggunakan data dan loading untuk menampilkan data di dalam UI tanpa perlu menggunakan useEffect.
-d. Di dalam useEffect, Anda akan mengirim permintaan HTTP menggunakan fetch untuk mengambil data dari server dan mengisi “data” dengan response. Saat data diterima, Anda akan mengubah nilai loading menjadi false.
+x. Di dalam useEffect, Anda akan mengirim permintaan HTTP menggunakan fetch untuk mengambil data dari server dan mengisi “data” dengan response. Saat data diterima, Anda akan mengubah nilai loading menjadi false.
 
 17. Anda ingin mengakses elemen DOM dalam komponen React Anda. Bagaimana Anda akan menggunakan useRef hook untuk mencapai ini?
 /*
@@ -158,10 +158,10 @@ d. Di dalam useEffect, Anda akan mengirim permintaan HTTP menggunakan fetch untu
         )
     }
 */
-a. Anda dapat menggunakan elementRef.style.color = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
-b. Anda dapat menggunakan elementRef.style.backgroundColor = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
-c. Anda dapat menggunakan elementRef.current.style.color = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
-d. Anda dapat menggunakan elementRef.current.style.backgroundColor = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
+a. Anda dapat menggunakan element.style.color = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
+b. Anda dapat menggunakan element.style.backgroundColor = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
+c. Anda dapat menggunakan element.current.style.color = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
+x. Anda dapat menggunakan element.current.style.backgroundColor = 'blue' dalam fungsi handleClick untuk mengubah warna latar belakang elemen div.
 
 18. Perhatikan code berikut!
 /*
@@ -172,7 +172,7 @@ d. Anda dapat menggunakan elementRef.current.style.backgroundColor = 'blue' dala
     }
 */
 Apa default color dari component Icon?
-a. Black
+x. Black
 b. Green
 c. Tidak Ada Default Color 
 d. Semua Jawaban Salah
@@ -200,24 +200,30 @@ d. Semua Jawaban Salah
 
 Apa yang salah pada code tersebut?
 a. Harus men-define page sebagai server side dengan “use server”
-b. Harus men-define page sebagai client side dengan “use client”
+x. Harus men-define page sebagai client side dengan “use client”
 c. Penggunaan useState harus dibarengi dengan useEffect pada component tersebut.
 d. Function yang terdapat pada onClick harus dibungkus dalam function tersendiri dan di inisiasi di atas sebelum pemanggilannya
 
 20. Apa fungsi utama dari createSlice dalam Redux Toolkit, dan mengapa ini berguna?
 a. createSlice adalah metode untuk membuat instance “slice” atau Redux store yang membantu kerja reducer.
 b. createSlice digunakan untuk membuat “slice” yang hanya mencakup actions pada redux dalam satu tempat.
-c. createSlice digunakan untuk membuat "slice" yang mencakup reducer, action, dan pembaruan state dalam satu tempat.
+x. createSlice digunakan untuk membuat "slice" yang mencakup reducer, action, dan pembaruan state dalam satu tempat.
 d. Tidak Ada Jawaban yang Benar
 
 21. Apa itu "middleware" dalam Redux, dan bagaimana mereka digunakan?
-a. Middleware adalah metode yang digunakan untuk memproses action sebelum mencapai reducer dalam Redux, seperti logging atau pengiriman data ke server.
+x. Middleware adalah metode yang digunakan untuk memproses action sebelum mencapai reducer dalam Redux, seperti logging atau pengiriman data ke server.
 b. Middleware adalah fungsi yang digunakan Redux untuk mengoptimalkan dalam merender tampilan component dalam React.
 c. Middleware adalah komponen dalam Redux yang menghubungkan antara state dan komponen React secara efisien.
 d. Middleware adalah metode untuk mengelola useState dalam Redux.
 
 22. Mengapa useReducer sering digunakan dalam manajemen state daripada useState dalam situasi yang lebih kompleks?
 a. useReducer lebih sederhana daripada useState dalam penerapan pembuatannya.
-b. useReducer memisahkan pembaruan state dari komponen, memudahkan pengelolaan state yang kompleks.
+x. useReducer memisahkan pembaruan state dari komponen, memudahkan pengelolaan state yang kompleks.
 c. useState memisahkan pembaruan state dari komponen, memudahkan pengelolaan state yang kompleks.
 d. Tidak Ada Jawaban yang Benar
+
+23. Bagaimana Anda melakukan parsing prop ke komponen lain dalam React?
+x. Tidak mungkin melewatkan prop ke komponen dalam React.
+b. Dengan menggunakan `class` untuk menginisialisasi prop di dalam komponen.
+c. Dengan memasukkan prop langsung ke dalam markup HTML dalam komponen.
+d. Dengan menyertakan prop sebagai atribut dalam elemen JSX saat Anda merender komponen.

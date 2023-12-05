@@ -1,5 +1,20 @@
 import Image from 'next/image'
 
+const data = [
+    {
+        id: 1, 
+        url: '/images/best-prod-1.png'
+    },
+    {
+        id: 2,  
+        url: '/images/best-prod-2.png'
+    },
+    {
+        id: 3,  
+        url: '/images/best-prod-3.png'
+    }
+]
+
 export default function Navbar(){
     return(
         <>
